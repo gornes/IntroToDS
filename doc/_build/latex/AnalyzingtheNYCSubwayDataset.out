@@ -1,0 +1,19 @@
+\BOOKMARK [0][-]{chapter.1}{Overview}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Statistical Test}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Statistical Test Used}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Justify the Statistical Test}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Results}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Interpretation}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Linear Regression}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Linear regression algorithm\(s\)}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Features used}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{Feature selection: why?}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.4}{Results: R Squared}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.5}{Interpretation and limits}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Visualization}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Ridership distribution with weather}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Supporting visualizations}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 16
+\BOOKMARK [0][-]{chapter.6}{Reflection}{}% 17
+\BOOKMARK [1][-]{section.6.1}{Shortcomings and limitations}{chapter.6}% 18
+\BOOKMARK [1][-]{section.6.2}{Insights}{chapter.6}% 19
