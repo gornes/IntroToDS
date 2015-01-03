@@ -14,7 +14,7 @@
 
 
 \title{Analyzing the NYC Subway Dataset Documentation}
-\date{December 29, 2014}
+\date{January 02, 2015}
 \release{1.0}
 \author{Ignacio Toledo}
 \newcommand{\sphinxlogo}{}
@@ -127,30 +127,217 @@
 
 \chapter{Overview}
 \label{overview:overview}\label{overview::doc}\label{overview:welcome-to-analyzing-the-nyc-subway-dataset-s-documentation}
-This project consists of two parts. In Part 1 of the project, you should have
-completed the questions in Problem Sets 2, 3, 4, and 5 in the Introduction to
+This project consists of two parts. In Part 1 of the project, we have completed
+the questions in Problem Sets 2, 3, 4, and 5 in the Introduction to
 Data Science course.
 
-This document addresses part 2 of the project. Please use this document as a
-template and answer the following questions to explain your reasoning and
-conclusion behind your work in the problem sets. You will attach a document
-with your answers to these questions as part of your final project submission.
+This document addresses part 2 of the project, where we answer a set questions
+to explain our reasoning and conclusions behind our work in the problem sets.
+
+The main purpose of the project is to analyze the ridership behavior for the
+New York City subway. The dataset used contains a sample taken from the month
+of May 2011, using the publicly available turnstile data from
+\href{http://web.mta.info/developers/turnstile.html}{MTA}. The turnstiles in
+different stations of the system report the absolute number of entries and exits
+at certain hours for a given time interval. The improved dataset that we use
+reports the number of entries for time intervals of 4 hours, so it present us
+with 6 daily reports by turnstile.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.600000}{\includegraphics{medrider_loc.png}}
+\caption{Turnstiles' locations from the improved dataset.}\end{figure}
+
+Besides the information provided by the NYC subway, the dataset also includes
+weather information taken from several weather stations within the NYC area:
+each turnstile, depending on the location in NYC, is merged with the weather
+information of the closest weather station, thus providing temperatures, wind
+speed, pressure, conditions, precipitations, etc.
+
+The project focuses one main question: Does the weather conditions, specifically
+precipitations, affect the NYC subway ridership? To answer this question we
+will use exploratory tools, statistical tests and visualizations. Also, we will
+try to fit a model to the data by choosing certain predicting features; will
+the use of the precipitation variable improve the fit?
+
+
+\section{Supporting Material}
+\label{overview:supporting-material}
+Within the project github repository you will also find an ipython notebook,
+where most of the work done was recorded for reference.
+
+
+\section{Some remarks about the datasets used}
+\label{overview:some-remarks-about-the-datasets-used}
+For this project we use the data set provided at Data Analyst Nanodegree's
+portal for Project 1. The description of the variables can be found on...
+
+However, after the exploratory and data analysis, we created another dataset by
+further munging the improved dataset. The basic idea was to smooth out features that
+might be caused by individual turnstiles or measurements. To do this, I
+grouped the data by time stamp and aggregated the entries by hour by adding all
+the entries. Also, the precipitation information for each
+time stamp was included by means of two columns:
+\begin{itemize}
+\item {} 
+\code{rain\_hour}: indicator (0 or 1) for precipitations for the particular date
+date and time. It is 1 if for any of the stations the conditions were Rain,
+Light Rain, Hard Rain or Light Drizzle at that moment.
+
+\item {} 
+\code{rain\_day}: indicator (0 or 1) for precipitations for the particular day
+of the report. If at any station of our turnstiles the conditions reported
+precipitations during the day the value is set to 1.
+
+\end{itemize}
 
 
 \chapter{Statistical Test}
 \label{section1:statistical-test}\label{section1::doc}
+In lecture 3 and its problem set, the following question was given \emph{Do rainy}
+\emph{days affect the ridership of the NYC subway?} To answer this problem we began by
+\begin{quote}
+
+creating two samples from our data:
+\end{quote}
+\begin{itemize}
+\item {} 
+Sample A (\emph{No rain}) is a subgroup containing the entries where no rain was reported, using the
+information of the \emph{rain} variable (\(rain = 0\))
+
+\item {} 
+Sample B (\emph{Rain}) is a subgroup with the entries where some precipitation was reported
+by means of the \emph{rain} variable (\(rain = 1\))
+
+\end{itemize}
+
+By studying the distributions, using histograms, we were able to characterize
+both data samples. We found out that both samples have a similar shape, clearly
+not normal, and positively skewed ({\hyperref[section1:figure21]{\emph{figure 2.1}}}).
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.600000}{\includegraphics{samples_compared.png}}
+\caption{Ridership distribution comparison between rainy and dry days.}{\small 
+Please note the logarithmic scale on axis Y. It was used to allows us to study
+the visualization with more detail.
+}\label{section1:figure21}\end{figure}
+
+Because of the non-normal distribution we decided to use the median as measure
+of average for the samples:
+\begin{itemize}
+\item {} 
+Sample A, days without precipitation, show a \textbf{median ridership of}
+\textbf{901 passengers per hour.}
+
+\item {} 
+Sample B, rainy days, report a \textbf{median of 945 passengers per hour.}
+
+\end{itemize}
+
+To assess the significance of this result, that rain seems to increase ridership
+in the NYC system by a small amount, we will use a non-parametric test.
+
 
 \section{Statistical Test Used}
 \label{section1:statistical-test-used}
+The Mann Whitney U test is chosen to assess the statistical significance of this
+result. The null hypothesis in our case is that both populations are equal, or
+that there is no significant deviation on both populations medians (two-tailed
+hypothesis).
+
 
 \section{Justify the Statistical Test}
 \label{section1:justify-the-statistical-test}
+The Mann Whitney U test, or Wilcoxon rank-sum test, is chosen because of
+characteristics of our samples: we can't use a parametric test because the
+distributions do not seem to follow any particular and well known probability
+distribution which we could use to make inferences that could directly report the
+significance of any difference between both populations.
+
+The U test is particularly powerful to assess the significance of the difference
+between the median of two samples that have similar distributions. The assumptions
+that our data samples must comply with are basically:
+\begin{itemize}
+\item {} 
+All observations of both groups are independent
+
+\item {} 
+The responses are ordinal (so we can use the ranking algorithm of the U test).
+
+\end{itemize}
+
 
 \section{Results}
 \label{section1:results}
+We used the scipy implementation of the Mann Whitney U test
+(scipy.stats.mannwhitneyu). The results from the test are:
+\begin{itemize}
+\item {} 
+\(U = 150678745.0\)
 
-\section{Interpretation}
-\label{section1:interpretation}
+\item {} 
+\(p = 1.91 \cdot 10^{-6}\)
+
+\end{itemize}
+
+But the user should be aware that scipy reports p-value for a one-tailed
+hypothesis, so we multiply by 2 to get the significance for our hypothesis:
+\begin{itemize}
+\item {} 
+\(p = 3.82 \cdot 10^{-6}\)
+
+\end{itemize}
+
+
+\section{Interpretation and discussion}
+\label{section1:interpretation-and-discussion}
+The interpretation, given the result from the U test, is that the the ridership
+is not the same for rainy days than non-rainy days, with a significance higher
+than 95\% (p \textless{} 0.05). Furthermore, from the descriptive statistics of our samples
+we can conclude that the ridership tends to be higher in rainy days.
+
+However we have limited ourselves here to follow the procedure suggested by the
+lectures, assuming that observations of both groups are independent and there
+no other factors that might wrongly induce this result. Even when the data sample
+we use for the project has been through a more complete wrangling, there are
+still some issues that might affect the results:
+\begin{itemize}
+\item {} 
+There is missing data for several turnstiles. From the original sample of 240
+turnstiles, only 52 have complete data for May;
+
+\item {} 
+As discussed on the forums, some precipitation data is missing from some weather
+stations. But more important, we are using the variable \emph{rain} to create our samples:
+this variable indicates if there was some precipitation at anytime of the day in the
+particular turnstile. Is the appropriate variable to use to build the subgroups?
+
+\end{itemize}
+
+Let's look with more detail at these problems.
+
+
+\subsection{Missing data}
+\label{section1:missing-data}\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.600000}{\includegraphics{dataentries.png}}
+\caption{Number of data points (measurements) by turnstile on our improved dataset.}\label{section1:figure22}\end{figure}
+
+\emph{Figure 2.2} shows some turnstile have missing data for the
+month of May; with 31 days and 6 daily reports it is expected that a complete
+monitored turnstile should have 186 measurements. This is the case for 52 turnstiles,
+but a 185 turnstiles have a number of measurements between 160 and 185. 3 turnstiles
+had less than 160 entries, and after inspections they have been removed because
+of the huge amount of missing data or time stamps reporting 0 entries. Of the 185
+turnstiles with incomplete data, there was one case where at all time stamps the
+number of entries was 0, which was also removed as it does not add any information
+to our analysis (even when in other cases it could give further information).
+
 
 \chapter{Linear Regression}
 \label{section2:linear-regression}\label{section2::doc}
