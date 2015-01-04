@@ -22,7 +22,7 @@ with 6 daily reports by turnstile.
    :scale: 60%
    :align: center
 
-   Turnstiles' locations from the improved dataset.
+   Turnstiles' locations within NYC, from the improved dataset.
 
 Besides the information provided by the NYC subway, the dataset also includes
 weather information taken from several weather stations within the NYC area:
