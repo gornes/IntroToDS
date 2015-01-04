@@ -7,19 +7,21 @@
 \contentsline {section}{\numberline {2.2}Justify the Statistical Test}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}Results}{4}{section.2.3}
 \contentsline {section}{\numberline {2.4}Interpretation and discussion}{4}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Missing data}{5}{subsection.2.4.1}
-\contentsline {chapter}{\numberline {3}Linear Regression}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Linear regression algorithm(s)}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Gradient descent}{7}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}OLS (with statsmodels)}{7}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Features used}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Feature selection: why?}{7}{section.3.3}
-\contentsline {section}{\numberline {3.4}Results: R Squared}{7}{section.3.4}
-\contentsline {section}{\numberline {3.5}Interpretation and limits}{7}{section.3.5}
-\contentsline {chapter}{\numberline {4}Visualization}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Ridership distribution with weather}{9}{section.4.1}
-\contentsline {section}{\numberline {4.2}Supporting visualizations}{9}{section.4.2}
-\contentsline {chapter}{\numberline {5}Conclusion}{11}{chapter.5}
-\contentsline {chapter}{\numberline {6}Reflection}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}Shortcomings and limitations}{13}{section.6.1}
-\contentsline {section}{\numberline {6.2}Insights}{13}{section.6.2}
+\contentsline {subsection}{\numberline {2.4.1}Missing data and precipitation distribution}{5}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}The use of the \emph {rain} variable}{7}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Smoothing the data and answering the question again}{7}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}Linear Regression}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Linear regression algorithm(s)}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Gradient descent}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}OLS (with statsmodels)}{9}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Features used}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Feature selection: why?}{9}{section.3.3}
+\contentsline {section}{\numberline {3.4}Results: R Squared}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}Interpretation and limits}{9}{section.3.5}
+\contentsline {chapter}{\numberline {4}Visualization}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Ridership distribution with weather}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Supporting visualizations}{11}{section.4.2}
+\contentsline {chapter}{\numberline {5}Conclusion}{13}{chapter.5}
+\contentsline {chapter}{\numberline {6}Reflection}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}Shortcomings and limitations}{15}{section.6.1}
+\contentsline {section}{\numberline {6.2}Insights}{15}{section.6.2}

@@ -101,7 +101,7 @@ still some issues that might affect the results:
 * There is one day which was a holiday (Monday 30th), should the data from this
   day be discarded?
 
-Let's look with more detail at these problems.
+Let's look with more detail at some these problems.
 
 Missing data and precipitation distribution
 -------------------------------------------
@@ -143,11 +143,11 @@ lower ridership, than downtown turnstiles. This effect can be seen in
    by hour) while the color indicates the data completeness of each turnstile: whiter
    colors indicate locations with more missing data.
 
-We, as the reader may, wonder if this missing data could affect in anyway
+We wonder, as the reader also may, if this missing data could affect in anyway
 our previous study. We are not completely sure, but we think that given the way
-we performed our analysis it could happen that the results are affected: the downtown
+we performed our analysis it could happen that the results were affected: the downtown
 station data, which also correspond to the group of stations with higher ridership,
-is contributing to increase the median "entries by hour" that we calculate, as they are
+is contributing to increase the median "entries by hour" that we calculated, as they are
 located in the higher values side of the ridership distribution. What happens if
 the stations in this locations are also the ones that tend to have more rainy days?
 We didn't believe this was the case, but just to be sure we created the
@@ -173,3 +173,89 @@ with lower precipitation (<= 0.004 inches) is 832 entries by hour. Also the stat
 with higher precipitation report on average 7 rainy days while the lower precipitation
 turnstiles only report 6.
 
+
+The use of the `rain` variable
+------------------------------
+
+The `rain` indicator in the improved data set reports if whether any precipitation
+happened at the turnstile location during the day. Because some of the
+precipitation data was missing in the weather tables, the conditions
+reported in the `conds` variable was used to create the `rain` column (as
+mentioned in the forums): if at anytime during a day the condition reported at
+a turnstile location was one of the following the `rain` indicator was set to one:
+'Rain', 'Light Rain', 'Heavy Rain' or 'Light Drizzle'. This explains why for 94
+entries reporting `rain` equal to 1, the `meanprecipi` variable (mean precipitation
+for the day at the location) was 0. Also, as shown before, this indicator is different
+for each turnstile depending on the closest weather station report. Thus, we
+find out that 216 turnstiles report 7 days of rain, 19 turnstiles report 6 rainy
+days, and 2 report 5 rainy days. Adding this analysis with the one in the previous
+subsection, we have to be aware that the samples might not be completely independent
+as previously thought.
+
+Also, there is another important problem derived from the use of `rain`
+variable that we hope to make clear with the plot shown on
+:ref:`Figure 2.5 <figure25>`.
+
+.. _figure25:
+.. figure:: r084.png
+   :scale: 100%
+   :align: center
+
+   Ridership, precipitation and rain indicator for turnstile 084.
+
+   The figure show the ridership evolution in May, in terms of entries per hour,
+   for turnstile 084, which is on one of the must busy stations in NYC subway.
+   There is one point every four hours for the month of May, and the symbols indicate
+   whether the day was rainy (big circles) or not rainy (small triangles). Also,
+   the precipitation amount in inches for the rainy days is shown by means of the
+   color bar in the right, with darker blue colors indication more precipitation.
+
+The problem we see on using the `rain` variable as and indicator of rainy conditions
+for a turnstile is that a whole day is tagged as rainy even when only rain at one
+time during the day. Furthermore, it can happen, as it can clearly be seen on the figure,
+that the rain happened in one of the less busy hours of the day, but still the whole
+day data will be tagged as rainy: this will clearly affect the results of our
+previous analysis.
+
+
+Smoothing the data and answering the question again
+---------------------------------------------------
+
+In order to smooth out the previously mentioned effects we created a new data
+set from where two samples will be created later. For this dataset we grouped
+all individual turnstiles data by time stamp, aggregating the ridership
+(`ENTRIESn_hourly`) using the `sum` function. In this way we have a set that
+represent the behavior of the whole NYC subway as one system, instead of
+individual turnstiles, reporting the total ridership at each time stamp. For each
+time stamp a variable called `rain_day` was created, which is 1 if in any
+turnstile during a day within the whole NYC subway network some precipitation
+was reported, or 0 otherwise. Also, the data from May 30th is removed, since it
+changes the statistic for the mondays. We will now redo the analysis using this
+dataset, and in this way try to answer the original question: *Does the NYC subway*
+*ridership changes with the precipitation conditions?*
+
+* Sample A is the subgroup of all the data coming from non rainy days (`rain == 0`).
+* Sample B is the subgroup of the data in rainy days (`rain == 1`).
+
+The ridership distribution of both samples are again similar in shape, but they are not
+longer continuous, as show in :ref:`Figure 2.6 <figure26>`. We will use again the median
+to report the average of each sample, and the Mann Whitney U test to assess the significance
+of any difference we might found.
+
+.. _figure26:
+.. figure:: samples2_compared.png
+   :scale: 60%
+   :align: center
+
+   Ridership distribution comparison between rainy and dry days for the new samples
+   taken from the aggregated data.
+
+The ridership in non-rainy days has a median of 363124 entries per hour, while for rainy
+days the median is 370535. However the results from the U test are now different:
+
+* U statistic: 3477.0
+* p-value (2-tailed hypothesis): 0.71
+
+So the difference in the medians are not significant now, and we can't conclude that
+there is any meaningful difference in the ridership as a function of the precipitation
+conditions.
