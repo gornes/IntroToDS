@@ -14,7 +14,7 @@
 
 
 \title{Analyzing the NYC Subway Dataset Documentation}
-\date{January 04, 2015}
+\date{January 07, 2015}
 \release{1.0}
 \author{Ignacio Toledo}
 \newcommand{\sphinxlogo}{}
@@ -219,7 +219,7 @@ not normal, and positively skewed ({\hyperref[section1:figure21]{\emph{figure 2.
 \centering
 \capstart
 
-\scalebox{0.600000}{\includegraphics{samples_compared.png}}
+\scalebox{0.750000}{\includegraphics{samples_compared.png}}
 \caption{Ridership distribution comparison between rainy and dry days.}{\small 
 Please note the logarithmic scale on axis Y. It was used to allows us to study
 the visualization with more detail.
@@ -330,11 +330,11 @@ Let's look with more detail at some these problems.
 \centering
 \capstart
 
-\scalebox{0.600000}{\includegraphics{dataentries.png}}
+\scalebox{0.750000}{\includegraphics{dataentries.png}}
 \caption{Number of data points (measurements) by turnstile on project's improved
 dataset.}\label{section1:figure22}\end{figure}
 
-\emph{Figure 2.2} shows some turnstiles have missing data for the
+{\hyperref[section1:figure22]{\emph{Figure 2.2}}} shows some turnstiles have missing data for the
 month of May; with 31 days and 6 daily reports it is expected that a complete
 monitored turnstile should have 186 measurements. This is the case for 52 turnstiles,
 but 185 turnstiles have a number of measurements between 160 and 185. 3 turnstiles
@@ -353,7 +353,7 @@ lower ridership, than downtown turnstiles. This effect can be seen in
 \centering
 \capstart
 
-\scalebox{0.600000}{\includegraphics{medrider_loc.png}}
+\scalebox{0.750000}{\includegraphics{medrider_loc.png}}
 \caption{Turnstiles monthly median ridership, location and number of data points}{\small 
 The figure shows the distribution of the turnstiles within NYC which are in
 our dataset. The size is proportional to the monthly median ridership (entries
@@ -374,7 +374,7 @@ plot shown in {\hyperref[section1:figure24]{\emph{Figure 2.4}}}.
 \centering
 \capstart
 
-\scalebox{0.600000}{\includegraphics{medprecip_loc.png}}
+\scalebox{0.750000}{\includegraphics{medprecip_loc.png}}
 \caption{Turnstiles monthly median ridership, location and mean precipitation.}{\small 
 The figure shows the geographical distribution of the NYC turnstiles in the
 project's improved dataset. Size is proportional to the monthly median ridership
@@ -448,10 +448,10 @@ dataset, and in this way try to answer the original question: \emph{Does the NYC
 \emph{ridership changes with the precipitation conditions?}
 \begin{itemize}
 \item {} 
-Sample A is the subgroup of all the data coming from non rainy days (\emph{rain == 0})
+Sample A is the subgroup of all the data coming from non rainy days (\emph{rain == 0}).
 
 \item {} 
-Sample B is the subgroup of the data in rainy days(\emph{rain == 1})
+Sample B is the subgroup of the data in rainy days (\emph{rain == 1}).
 
 \end{itemize}
 
@@ -463,12 +463,12 @@ of any difference we might found.
 \centering
 \capstart
 
-\scalebox{0.600000}{\includegraphics{samples2_compared.png}}
+\scalebox{0.750000}{\includegraphics{samples2_compared.png}}
 \caption{Ridership distribution comparison between rainy and dry days for the new samples
 taken from the aggregated data.}\label{section1:figure26}\end{figure}
 
-The ridership in non-rainy days has a median of 363124 entries per hour, while for rainy
-days the median is 370535. However the results from the U test are now different:
+The ridership in non-rainy days has a median of 370535 entries per hour, while for rainy
+days the median is 363124. However the results from the U test are now different:
 \begin{itemize}
 \item {} 
 U statistic: 3477.0
@@ -485,27 +485,428 @@ conditions.
 
 \chapter{Linear Regression}
 \label{section2:linear-regression}\label{section2::doc}
+The second part of this work deals with the use of tools related to machine
+learning: can we use the data to create models that will allows us to predict
+the ridership?
+
+Problem Set 3 of the class has as one of the main goals the use of a linear
+regression model that could help us to predict the ridership in the NYC subway.
+We were asked to implement one of the algorithms that calculates the coefficients
+of a multiple linear regression model: gradient descent. The selection of the
+features, and thus the number of coefficients to fit, was left as an exercise
+for the student.
+
+After implementing the linear regression model, and study its strengths and
+shortcomings, we used another algorithm to find the coefficients of the linear
+regression model: OLS, or ordinary least squares.
+
+Finally, a third method was used, also based on a linear regression algorithm,
+but this time the model used higher order polynomials to learn from the data,
+in an effort to fit the non-linearity of it.
+
 
 \section{Linear regression algorithm(s)}
 \label{section2:linear-regression-algorithm-s}
 
 \subsection{Gradient descent}
 \label{section2:gradient-descent}
+The code used to implement the gradient descent algorithm to find the linear
+regression coefficient can be checked on the python file available at the
+github repository associated to this work, and on the submissions to the
+\emph{Introduction to Data Science} class (problem set 3).
 
-\subsection{OLS (with statsmodels)}
-\label{section2:ols-with-statsmodels}
 
-\section{Features used}
-\label{section2:features-used}
+\subsection{Ordinary Least Squares (with statsmodels)}
+\label{section2:ordinary-least-squares-with-statsmodels}
+Selecting the same features as in the Gradient Descent exercise, we calculated
+the coefficients of the linear model by using the OLS implementation of the
+statsmodels python library.
 
-\section{Feature selection: why?}
-\label{section2:feature-selection-why}
 
-\section{Results: R Squared}
-\label{section2:results-r-squared}
+\subsection{Polynomial features with Ridge linear regression}
+\label{section2:polynomial-features-with-ridge-linear-regression}
+After analysing the results from the previous regressions, and for reasons that
+will be clear after the description of their results, we went a little further
+and we used a polynomial transformation of the selected features, and another
+linear regression algorithm, the Ridge regression, was used to model the data
+and predict ridership. The model used and results will be shown in the
+interpretation section.
+
+
+\section{Models and features used}
+\label{section2:models-and-features-used}
+The selection of the features to use and how to use them in the model was not
+a linear process, but an iterative work based on exploratory statistics, residuals
+analysis and study of the models obtained to predict the ridership. If fact,
+for the problem set 3 in the class we used a different set of variables as
+predictors (specifically \emph{day\_week} instead of \emph{weekday}).
+
+Also, because of these iterative analysis we decided to also give a try to a
+third method to model the data, which was the use of polynomial features.
+
+The multiple regression model used for the first two methods can be written as:
+\phantomsection\label{section2:multreg-mod}\phantomsection\label{section2:equation-multreg_mod}\begin{gather}
+\begin{split}\hat y = \theta_0 + \theta_1 x_1 + theta_2 x_2 + ... + \theta_k x_k\end{split}\label{section2-multreg_mod}
+\end{gather}
+where \(\hat y\) is the predicted variable, \(x_i\) are the predictors
+(features) and \(\theta_i\) are the coefficients or parameters that we are
+looking for using either the gradient descent or the OLS algorithms.
+
+For our work, we decided to use the following predictors:
+\begin{itemize}
+\item {} 
+\emph{UNIT}: turnstile unique identification. The use of the identification
+of each turnstile starts from the realization that the turnstiles have different
+ridership volumes for the same time periods, as it can be readily seen by
+comparing ridership averages. However this is a non-numerical categorical
+variable, so it was required to transform this variable to numerical format
+by using dummy variables. This steps adds at once \emph{n} extra features or predictors,
+one for each turnstile in our data, which adds a lot of computing work to the
+algorithm.
+
+\item {} 
+\emph{hour}: numerical variable that indicates the hour of the day when the ridership
+was reported for each turnstile. This variable takes values that can be continuous
+between 0 and 24; it adds one coefficient to calculate. {\hyperref[section2:figure31]{\emph{Figure 3.1}}}
+shows the relation of the ridership values with hour the day.
+
+\end{itemize}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{hour_rider.png}}
+\caption{Ridership vs hour of the day.}{\small 
+Instead of just constructing a scatter plot, we decided to use another descriptive
+statistic method to study the relation, if any, between ridership and hour of
+the day. We used boxplots to visualize the distribution of ridership for each
+hour of the day. In this way we can see that the medians do not follow a
+linear relation with the hour of the day, and that there is a huge spread
+of possible ridership values for each hour.
+}\label{section2:figure31}\end{figure}
+\begin{itemize}
+\item {} 
+\emph{weekday}: numerical (and categorical) variable indicating if the day
+when the ridership measurement was done was either a weekday (1) or weekend
+day (0). {\hyperref[section2:figure32]{\emph{Figure 3.2}}}
+shows the relation of the ridership with kind of day.
+
+\end{itemize}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{weekday_rider.png}}
+\caption{Ridership vs weekday/weekend-day.}{\small 
+This plot show the ridership distribution as boxplots for work days (Monday to
+Friday) and weekend days (Saturdays and Sundays). It is clear that even
+when the spread in entries per hour is still big a linear correlation can
+be used.
+}\label{section2:figure32}\end{figure}
+\begin{itemize}
+\item {} 
+\emph{rain}: daily precipitation condition for a turnstile location (0 for a clear
+day, 1 for rainy). Even when is a categorical variable, it is also numerical,
+and it is used as the final predictor feature for our liner model.
+{\hyperref[section2:figure33]{\emph{Figure 3.3}}} shows the relation of the ridership values with
+precipitation conditions.
+
+\end{itemize}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{rain_rider.png}}
+\caption{Ridership vs rainy conditions.}{\small 
+With the use of boxplots again, we can see in this figure that a really mild
+linear relation exist for the relation between daily precipitation conditions
+and ridership. (Which as was shown in the previous section is not significant)
+}\label{section2:figure33}\end{figure}
+
+The features were selected based partially on intuition and partially by exploratory
+analysis.
+
+First, it was clear that the behavior, for each individual turnstile, was mainly
+a function of the hour of the day and the day of the week, as is shown in
+{\hyperref[section2:figure34]{\emph{Figure 3.4}}}: there is a clear periodicity in the ridership
+behavior for each day, depending on the time of the day, and also a dependence
+on the day of the week. However the relation is clearly non-linear. We kept the
+\emph{hour} as a predictor because is an important predictor, an in a very rough way
+one can see that ridership is lower in the beginning of the day while reaching
+a pick on the evenings.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{1.000000}{\includegraphics{r084_may.png}}
+\caption{Ridership vs date for turnstile R084.}{\small 
+The figure clearly shows a periodic behavior for the ridership behavior for
+a particular turnstile, which is a function mainly of the hour of the day and
+day of the week. Ridership picks are usually seen at 20 hours, while weekends
+and holidays (May 30th) being less busy than weekdays.
+}\label{section2:figure34}\end{figure}
+
+However, we decided to use \emph{weekday} instead of \emph{day\_week} (the second being the
+day of the week, i.e, a number between 0 and 6, where 0 i Monday and 6 Sunday),
+because the major change on ridership behavior is seen between work days and
+off days (weekends), and \emph{weekday} can be better modeled by a linear model than
+\emph{day\_week} (as it can be checked on {\hyperref[section2:figure35]{\emph{Figure 3.5}}})
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{day_rider.png}}
+\caption{Ridership vs day of the week.}{\small 
+This plot show the ridership distribution as boxplots for the 7 days of the
+week (0 is Monday, 6 is Sunday). We can see that even when a relation
+exist between day of the week and ridership, this relation doesn't look
+linear, and thus we decided to use \emph{weekday} instead.
+}\label{section2:figure35}\end{figure}
+
+
+\section{Results: coefficients and R Squared}
+\label{section2:results-coefficients-and-r-squared}
+The coefficients found with the gradient descent and OLS algorithms were the
+same in both cases, which was expected for a successful execution of the
+gradient descent algorithm. The selected features were enough to obtain a
+\(R^2 = 0.481\). More in depth details of the result can be seen in
+{\hyperref[section2:table31]{\emph{Table 3.1}}}. Also, thanks to the statsmodels OLS implementation
+we can report some of the coefficients obtained from the linear model fit,
+using the predictor variables \emph{hour}, \emph{weekday}, \emph{rain} and dummies from \emph{UNIT}
+({\hyperref[section2:multreg-mod]{\emph{Eq. 3.1}}}), and their statistical significances
+({\hyperref[section2:table32]{\emph{Table 3.2}}}).
+
+At {\hyperref[section2:figure36]{\emph{figure 3.6}}} we present some residuals analysis plots, in order
+to provide later a more accurate interpretation of these results.
+\phantomsection\label{section2:table31}
+
+\begin{threeparttable}
+\capstart\caption{OLS Regression Results}
+
+\begin{tabulary}{\linewidth}{|L|L|}
+\hline
+\textsf{\relax 
+OLS Regression Results
+} & \textsf{\relax }\\
+\hline
+Dep. Variable:        ENTRIESn\_hourly
+ & 
+R-squared:                       0.481
+\\
+
+Model:                            OLS
+ & 
+Adj. R-squared:                  0.478
+\\
+
+Method:                 Least Squares
+ & 
+F-statistic:                     163.1
+\\
+
+Date:                Wed, 07 Jan 2015
+ & 
+Prob (F-statistic):               0.00
+\\
+
+Time:                        14:12:52
+ & 
+Log-Likelihood:            -3.8397e+05
+\\
+
+No. Observations:               42267
+ & 
+AIC:                         7.684e+05
+\\
+
+Df Residuals:                   42027
+ & 
+BIC:                         7.705e+05
+\\
+
+Df Model:                         239
+ & \\
+
+Covariance Type:            nonrobust
+ & \\
+\hline\end{tabulary}
+
+\end{threeparttable}
+
+\phantomsection\label{section2:table32}
+
+\begin{threeparttable}
+\capstart\caption{Linear regression coefficients}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|L|L|}
+\hline
+\textsf{\relax 
+Predictor
+} & \textsf{\relax 
+coef
+} & \textsf{\relax 
+std err
+} & \textsf{\relax 
+t
+} & \textsf{\relax 
+P\textgreater{}\textbar{}t\textbar{}
+} & \textsf{\relax 
+{[}95\% Conf. Int.{]}
+}\\
+\hline
+\textbf{Intercept}
+ & 
+-1750.5171
+ & 
+166.661
+ & 
+-10.503
+ & 
+0.000
+ & 
+-2077.175 -1423.859
+\\
+
+C(UNIT){[}T.R004{]}
+ & 
+334.1581
+ & 
+231.108
+ & 
+1.446
+ & 
+0.148
+ & 
+-118.819   787.135
+\\
+
+C(UNIT){[}T.R005{]}
+ & 
+335.0522
+ & 
+232.095
+ & 
+1.444
+ & 
+0.149
+ & 
+-119.859   789.963
+\\
+
+C(UNIT){[}T.R006{]}
+ & 
+451.3319
+ & 
+229.532
+ & 
+1.966
+ & 
+0.049
+ & 
+1.445   901.218
+\\
+
+C(UNIT){[}T.R007{]}
+ & 
+164.5844
+ & 
+232.767
+ & 
+0.707
+ & 
+0.480
+ & 
+-291.644   620.812
+\\
+
+...
+ & 
+...
+ & 
+...
+ & 
+...
+ & 
+...
+ & 
+...       ...
+\\
+
+\textbf{hour}
+ & 
+124.0989
+ & 
+1.500
+ & 
+82.741
+ & 
+0.000
+ & 
+121.159   127.039
+\\
+
+\textbf{weekday}
+ & 
+980.9091
+ & 
+23.243
+ & 
+42.203
+ & 
+0.000
+ & 
+935.353  1026.465
+\\
+
+\textbf{rain}
+ & 
+36.3145
+ & 
+25.167
+ & 
+1.443
+ & 
+0.149
+ & 
+-13.013    85.642
+\\
+\hline\end{tabulary}
+
+\end{threeparttable}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{1.000000}{\includegraphics{residuals_an.png}}
+\caption{Residuals analysis plots for the linear regression model (improved dataset).}{\small 
+\emph{Top left:} normal probability plot of the residuals and \emph{top right:} residuals
+distribution. It is clear that residuals do not adjust well to a simple normal
+probability distribution. \emph{Bottom left} shows the residuals versus the
+predicted quantities, and \emph{bottom right} just shows the residuals distribution
+around 0.
+}\label{section2:figure36}\end{figure}
+
 
 \section{Interpretation and limits}
-\label{section2:interpretation-and-limits}
+\label{section2:interpretation-and-limits}\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.900000}{\includegraphics{turns_pred.png}}
+\caption{The observed ridership values for two different turnstiles in the month of May,
+over-plotted with the predicted ridership for both cases.}{\small 
+The turnstiles used were R084 and R172, one at downtown and the other at the
+periphery. The predicted values come from the linear regression model applied
+in previous section.
+}\label{section2:figure37}\end{figure}
+
+A successful multiple regression model should comply with several assumptions,
+which can be checked by analysing the residuals.
+\begin{enumerate}
+\item {} 
+\end{enumerate}
+
 
 \chapter{Visualization}
 \label{section3:visualization}\label{section3::doc}
@@ -527,6 +928,13 @@ conditions.
 
 \section{Insights}
 \label{section5:insights}
+\begin{thebibliography}{os4}
+\bibitem[os4]{os4}{\phantomsection\label{section1:os4} 
+Diez, Barr, Cetinkaya-Rundel. Open Intro Statistics. 2nd Edition.
+openintro.org
+}
+\end{thebibliography}
+
 
 
 \renewcommand{\indexname}{Index}

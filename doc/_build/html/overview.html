@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Analyzing the NYC Subway Dataset 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Analyzing the NYC Subway Dataset 1.0 documentation" href="index.html" />
+    <link rel="next" title="Statistical Test" href="section1.html" />
+    <link rel="prev" title="Welcome to Analyzing the NYC Subway Dataset’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="section1.html" title="Statistical Test"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Analyzing the NYC Subway Dataset’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Analyzing the NYC Subway Dataset 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This project consists of two parts. In Part 1 of the project, we have completed
+the questions in Problem Sets 2, 3, 4, and 5 in the Introduction to
+Data Science course.</p>
+<p>This document addresses part 2 of the project, where we answer a set questions
+to explain our reasoning and conclusions behind our work in the problem sets.</p>
+<p>The main purpose of the project is to analyze the ridership behavior for the
+New York City subway. The dataset used contains a sample taken from the month
+of May 2011, using the publicly available turnstile data from
+<a class="reference external" href="http://web.mta.info/developers/turnstile.html">MTA</a>. The turnstiles in
+different stations of the system report the absolute number of entries and exits
+at certain hours for a given time interval. The improved dataset that we use
+reports the number of entries for time intervals of 4 hours, so it present us
+with 6 daily reports by turnstile.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/medrider_loc.png"><img alt="_images/medrider_loc.png" src="_images/medrider_loc.png" style="width: 1080.0px; height: 864.0px;" /></a>
+<p class="caption">Turnstiles&#8217; locations within NYC, from the improved dataset.</p>
+</div>
+<p>Besides the information provided by the NYC subway, the dataset also includes
+weather information taken from several weather stations within the NYC area:
+each turnstile, depending on the location in NYC, is merged with the weather
+information of the closest weather station, thus providing temperatures, wind
+speed, pressure, conditions, precipitations, etc.</p>
+<p>The project focuses one main question: Does the weather conditions, specifically
+precipitations, affect the NYC subway ridership? To answer this question we
+will use exploratory tools, statistical tests and visualizations. Also, we will
+try to fit a model to the data by choosing certain predicting features; will
+the use of the precipitation variable improve the fit?</p>
+<div class="section" id="supporting-material">
+<h2>Supporting Material<a class="headerlink" href="#supporting-material" title="Permalink to this headline">¶</a></h2>
+<p>Within the project github repository you will also find an ipython notebook,
+where most of the work done was recorded for reference.</p>
+</div>
+<div class="section" id="some-remarks-about-the-datasets-used">
+<h2>Some remarks about the datasets used<a class="headerlink" href="#some-remarks-about-the-datasets-used" title="Permalink to this headline">¶</a></h2>
+<p>For this project we use the data set provided at Data Analyst Nanodegree&#8217;s
+portal for Project 1. The description of the variables can be found on...</p>
+<p>However, after the exploratory and data analysis, we created another dataset by
+further munging the improved dataset. The basic idea was to smooth out features that
+might be caused by individual turnstiles or measurements. To do this, I
+grouped the data by time stamp and aggregated the entries by hour by adding all
+the entries. Also, the precipitation information for each
+time stamp was included by means of two columns:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">rain_hour</span></tt>: indicator (0 or 1) for precipitations for the particular date
+date and time. It is 1 if for any of the stations the conditions were Rain,
+Light Rain, Hard Rain or Light Drizzle at that moment.</li>
+<li><tt class="docutils literal"><span class="pre">rain_day</span></tt>: indicator (0 or 1) for precipitations for the particular day
+of the report. If at any station of our turnstiles the conditions reported
+precipitations during the day the value is set to 1.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#supporting-material">Supporting Material</a></li>
+<li><a class="reference internal" href="#some-remarks-about-the-datasets-used">Some remarks about the datasets used</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Analyzing the NYC Subway Dataset&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="section1.html"
+                        title="next chapter">Statistical Test</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/overview.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="section1.html" title="Statistical Test"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Analyzing the NYC Subway Dataset’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Analyzing the NYC Subway Dataset 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Ignacio Toledo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

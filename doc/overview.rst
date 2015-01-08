@@ -62,3 +62,28 @@ time stamp was included by means of two columns:
 * ``rain_day``: indicator (0 or 1) for precipitations for the particular day
   of the report. If at any station of our turnstiles the conditions reported
   precipitations during the day the value is set to 1.
+
+
+.. [Diez2014] Diez, Barr, Cetinkaya-Rundel. Introductory Statistics with
+   Randomizations and Simulation. 1st Edition. openintro.org
+
+.. [Diez2012] Diez, Barr, Cetinkaya-Rundel. Open Intro Statistics. 2nd Edition.
+   openintro.org
+
+.. [McKinney2013] McKinney. Python for Data Analysis. 1st Edition.
+   O'Reilly Media. 2012.
+
+.. [Peck2012] Peck, Olsen, Devore. Introduction to Statistics and Data Analysis.
+   4th Edition. Brooks/Cole. 2012.
+
+.. [Lyman2010] Lyman Ott, Longnecker. An Introduction to Statistical Methods
+   and Data analysis. Sixth Edition. Brooks/Cole. 2010.
+
+.. [Rossant2014] Rossant. IPython Interactive Computing and Visualization
+   Cookbook. 1st Edition. Packt Publishing. 2014.
+
+.. [glmscikit] http://scikit-learn.org/stable/modules/linear_model.html
+
+.. [statsmodels] http://statsmodels.sourceforge.net/stable/
+
+.. [wikiMann] http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test

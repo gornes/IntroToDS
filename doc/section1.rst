@@ -17,7 +17,7 @@ not normal, and positively skewed (:ref:`figure 2.1 <figure21>`).
 
 .. _figure21:
 .. figure:: samples_compared.png
-   :scale: 60%
+   :scale: 75%
    :align: center
 
    Ridership distribution comparison between rainy and dry days.
@@ -108,14 +108,14 @@ Missing data and precipitation distribution
 
 .. _figure22:
 .. figure:: dataentries.png
-   :scale: 60%
+   :scale: 75%
    :align: center
 
    Number of data points (measurements) by turnstile on project's improved
    dataset.
 
 
-:ref:`Figure 2.2 <_figure22>` shows some turnstiles have missing data for the
+:ref:`Figure 2.2 <figure22>` shows some turnstiles have missing data for the
 month of May; with 31 days and 6 daily reports it is expected that a complete
 monitored turnstile should have 186 measurements. This is the case for 52 turnstiles,
 but 185 turnstiles have a number of measurements between 160 and 185. 3 turnstiles
@@ -133,7 +133,7 @@ lower ridership, than downtown turnstiles. This effect can be seen in
 
 .. _figure23:
 .. figure:: medrider_loc.png
-   :scale: 60%
+   :scale: 75%
    :align: center
 
    Turnstiles monthly median ridership, location and number of data points
@@ -156,7 +156,7 @@ plot shown in :ref:`Figure 2.4 <figure24>`.
 
 .. _figure24:
 .. figure:: medprecip_loc.png
-   :scale: 60%
+   :scale: 75%
    :align: center
 
    Turnstiles monthly median ridership, location and mean precipitation.
@@ -244,14 +244,14 @@ of any difference we might found.
 
 .. _figure26:
 .. figure:: samples2_compared.png
-   :scale: 60%
+   :scale: 75%
    :align: center
 
    Ridership distribution comparison between rainy and dry days for the new samples
    taken from the aggregated data.
 
-The ridership in non-rainy days has a median of 363124 entries per hour, while for rainy
-days the median is 370535. However the results from the U test are now different:
+The ridership in non-rainy days has a median of 370535 entries per hour, while for rainy
+days the median is 363124. However the results from the U test are now different:
 
 * U statistic: 3477.0
 * p-value (2-tailed hypothesis): 0.71
@@ -259,3 +259,5 @@ days the median is 370535. However the results from the U test are now different
 So the difference in the medians are not significant now, and we can't conclude that
 there is any meaningful difference in the ridership as a function of the precipitation
 conditions.
+
+

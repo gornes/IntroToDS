@@ -8,14 +8,14 @@
 \BOOKMARK [1][-]{section.2.4}{Interpretation and discussion}{chapter.2}% 8
 \BOOKMARK [0][-]{chapter.3}{Linear Regression}{}% 9
 \BOOKMARK [1][-]{section.3.1}{Linear regression algorithm\(s\)}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{Features used}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.3}{Feature selection: why?}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.4}{Results: R Squared}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.5}{Interpretation and limits}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Visualization}{}% 15
-\BOOKMARK [1][-]{section.4.1}{Ridership distribution with weather}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{Supporting visualizations}{chapter.4}% 17
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 18
-\BOOKMARK [0][-]{chapter.6}{Reflection}{}% 19
-\BOOKMARK [1][-]{section.6.1}{Shortcomings and limitations}{chapter.6}% 20
-\BOOKMARK [1][-]{section.6.2}{Insights}{chapter.6}% 21
+\BOOKMARK [1][-]{section.3.2}{Models and features used}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{Results: coefficients and R Squared}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.4}{Interpretation and limits}{chapter.3}% 13
+\BOOKMARK [0][-]{chapter.4}{Visualization}{}% 14
+\BOOKMARK [1][-]{section.4.1}{Ridership distribution with weather}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.2}{Supporting visualizations}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 17
+\BOOKMARK [0][-]{chapter.6}{Reflection}{}% 18
+\BOOKMARK [1][-]{section.6.1}{Shortcomings and limitations}{chapter.6}% 19
+\BOOKMARK [1][-]{section.6.2}{Insights}{chapter.6}% 20
+\BOOKMARK [0][-]{chapter*.8}{Bibliography}{}% 21

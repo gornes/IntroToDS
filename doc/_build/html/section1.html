@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Statistical Test &mdash; Analyzing the NYC Subway Dataset 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Analyzing the NYC Subway Dataset 1.0 documentation" href="index.html" />
+    <link rel="next" title="Linear Regression" href="section2.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="section2.html" title="Linear Regression"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Analyzing the NYC Subway Dataset 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="statistical-test">
+<h1>Statistical Test<a class="headerlink" href="#statistical-test" title="Permalink to this headline">¶</a></h1>
+<p>In lecture 3 and its problem set, the following question was given <em>Do rainy</em>
+<em>days affect the ridership of the NYC subway?</em> To answer this problem we began by</p>
+<blockquote>
+<div>creating two samples from our data:</div></blockquote>
+<ul class="simple">
+<li>Sample A (<cite>No rain</cite>) is a subgroup containing the entries where no rain was reported, using the
+information of the <cite>rain</cite> variable (<span class="math">\(rain = 0\)</span>)</li>
+<li>Sample B (<cite>Rain</cite>) is a subgroup with the entries where some precipitation was reported
+by means of the <cite>rain</cite> variable (<span class="math">\(rain = 1\)</span>)</li>
+</ul>
+<p>By studying the distributions, using histograms, we were able to characterize
+both data samples. We found out that both samples have a similar shape, clearly
+not normal, and positively skewed (<a class="reference internal" href="#figure21"><em>figure 2.1</em></a>).</p>
+<div class="figure align-center" id="figure21">
+<a class="reference internal image-reference" href="_images/samples_compared.png"><img alt="_images/samples_compared.png" src="_images/samples_compared.png" style="width: 1350.0px; height: 1080.0px;" /></a>
+<p class="caption">Ridership distribution comparison between rainy and dry days.</p>
+<div class="legend">
+Please note the logarithmic scale on axis Y. It was used to allows us to study
+the visualization with more detail.</div>
+</div>
+<p>Because of the non-normal distribution we decided to use the median as measure
+of average for the samples:</p>
+<ul class="simple">
+<li>Sample A, days without precipitation, show a <strong>median ridership of</strong>
+<strong>901 passengers per hour.</strong></li>
+<li>Sample B, rainy days, report a <strong>median of 945 passengers per hour.</strong></li>
+</ul>
+<p>To assess the significance of this result, that rain seems to increase ridership
+in the NYC system by a small amount, we will use a non-parametric test.</p>
+<div class="section" id="statistical-test-used">
+<h2>Statistical Test Used<a class="headerlink" href="#statistical-test-used" title="Permalink to this headline">¶</a></h2>
+<p>The Mann Whitney U test is chosen to assess the statistical significance of this
+result. The null hypothesis in our case is that both populations are equal, or
+that there is no significant deviation on both populations medians (two-tailed
+hypothesis).</p>
+</div>
+<div class="section" id="justify-the-statistical-test">
+<h2>Justify the Statistical Test<a class="headerlink" href="#justify-the-statistical-test" title="Permalink to this headline">¶</a></h2>
+<p>The Mann Whitney U test, or Wilcoxon rank-sum test, is chosen because of
+characteristics of our samples: we can&#8217;t use a parametric test because the
+distributions do not seem to follow any particular and well known probability
+distribution which we could use to make inferences that could directly report the
+significance of any difference between both populations.</p>
+<p>The U test is particularly powerful to assess the significance of the difference
+between the median of two samples that have similar distributions. The assumptions
+that our data samples must comply with are basically:</p>
+<ul class="simple">
+<li>All observations of both groups are independent</li>
+<li>The responses are ordinal (so we can use the ranking algorithm of the U test).</li>
+</ul>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>We used the scipy implementation of the Mann Whitney U test
+(scipy.stats.mannwhitneyu). The results from the test are:</p>
+<ul class="simple">
+<li><span class="math">\(U = 150678745.0\)</span></li>
+<li><span class="math">\(p = 1.91 \cdot 10^{-6}\)</span></li>
+</ul>
+<p>But the user should be aware that scipy reports p-value for a one-tailed
+hypothesis, so we multiply by 2 to get the significance for our hypothesis:</p>
+<ul class="simple">
+<li><span class="math">\(p = 3.82 \cdot 10^{-6}\)</span></li>
+</ul>
+</div>
+<div class="section" id="interpretation-and-discussion">
+<h2>Interpretation and discussion<a class="headerlink" href="#interpretation-and-discussion" title="Permalink to this headline">¶</a></h2>
+<p>The interpretation, given the result from the U test, is that the the ridership
+is not the same for rainy days than non-rainy days, with a significance higher
+than 95% (p &lt; 0.05). Furthermore, from the descriptive statistics of our samples
+we can conclude that the ridership tends to be higher in rainy days.</p>
+<p>However we have limited ourselves here to follow the procedure suggested by the
+lectures, assuming that observations of both groups are independent and there
+no other factors that might wrongly induce this result. Even when the data sample
+we use for the project has been through a more complete wrangling, there are
+still some issues that might affect the results:</p>
+<ul class="simple">
+<li>There is missing data for several turnstiles. From the original sample of 240
+turnstiles, only 52 have complete data for May; also, as discussed on the forums,
+some precipitation data is missing from some weather stations.</li>
+<li>We are using the variable <cite>rain</cite> to create our samples: this variable
+indicates if the conditions at anytime of the day at a
+particular turnstile were rainy. Is it the appropriate variable to use to
+build the subgroups?</li>
+<li>There is one day which was a holiday (Monday 30th), should the data from this
+day be discarded?</li>
+</ul>
+<p>Let&#8217;s look with more detail at some these problems.</p>
+<div class="section" id="missing-data-and-precipitation-distribution">
+<h3>Missing data and precipitation distribution<a class="headerlink" href="#missing-data-and-precipitation-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="figure22">
+<a class="reference internal image-reference" href="_images/dataentries.png"><img alt="_images/dataentries.png" src="_images/dataentries.png" style="width: 1350.0px; height: 1080.0px;" /></a>
+<p class="caption">Number of data points (measurements) by turnstile on project&#8217;s improved
+dataset.</p>
+</div>
+<p><a class="reference internal" href="#figure22"><em>Figure 2.2</em></a> shows some turnstiles have missing data for the
+month of May; with 31 days and 6 daily reports it is expected that a complete
+monitored turnstile should have 186 measurements. This is the case for 52 turnstiles,
+but 185 turnstiles have a number of measurements between 160 and 185. 3 turnstiles
+had less than 160 entries, and after inspections they have been removed because
+of the huge amount of missing data or time stamps reporting 0 entries. Of the 185
+turnstiles with incomplete data, there was one case where at all time stamps the
+number of entries was 0, which was also removed as it does not add any information
+to our analysis (even when in other cases it could give further information).</p>
+<p>The problem with the missing data is that, for some not clear explanation we
+could provide, affects more the suburb stations turnstiles than the ones in downtown
+areas. And suburb stations tend also to show lower number of hourly entries, i.e, a
+lower ridership, than downtown turnstiles. This effect can be seen in
+<a class="reference internal" href="#figure23"><em>Figure 2.3</em></a>.</p>
+<div class="figure align-center" id="figure23">
+<a class="reference internal image-reference" href="_images/medrider_loc.png"><img alt="_images/medrider_loc.png" src="_images/medrider_loc.png" style="width: 1350.0px; height: 1080.0px;" /></a>
+<p class="caption">Turnstiles monthly median ridership, location and number of data points</p>
+<div class="legend">
+The figure shows the distribution of the turnstiles within NYC which are in
+our dataset. The size is proportional to the monthly median ridership (entries
+by hour) while the color indicates the data completeness of each turnstile: whiter
+colors indicate locations with more missing data.</div>
+</div>
+<p>We wonder, as the reader also may, if this missing data could affect in anyway
+our previous study. We are not completely sure, but we think that given the way
+we performed our analysis it could happen that the results were affected: the downtown
+station data, which also correspond to the group of stations with higher ridership,
+is contributing to increase the median &#8220;entries by hour&#8221; that we calculated, as they are
+located in the higher values side of the ridership distribution. What happens if
+the stations in this locations are also the ones that tend to have more rainy days?
+We didn&#8217;t believe this was the case, but just to be sure we created the
+plot shown in <a class="reference internal" href="#figure24"><em>Figure 2.4</em></a>.</p>
+<div class="figure align-center" id="figure24">
+<a class="reference internal image-reference" href="_images/medprecip_loc.png"><img alt="_images/medprecip_loc.png" src="_images/medprecip_loc.png" style="width: 1350.0px; height: 1080.0px;" /></a>
+<p class="caption">Turnstiles monthly median ridership, location and mean precipitation.</p>
+<div class="legend">
+The figure shows the geographical distribution of the NYC turnstiles in the
+project&#8217;s improved dataset. Size is proportional to the monthly median ridership
+and color represent the month&#8217;s mean precipitation per turnstile. The figure
+shows that precipitations are higher in southern (and downtown) NYC.</div>
+</div>
+<p>The figure shows that the precipitation is higher in the northern NYC, which is
+also the location of the most busy turnstiles: the median ridership of stations with
+higher precipitation (&gt; 0.004 inches) is 1116 entries by hour, while the stations
+with lower precipitation (&lt;= 0.004 inches) is 832 entries by hour. Also the stations
+with higher precipitation report on average 7 rainy days while the lower precipitation
+turnstiles only report 6.</p>
+</div>
+<div class="section" id="the-use-of-the-rain-variable">
+<h3>The use of the <cite>rain</cite> variable<a class="headerlink" href="#the-use-of-the-rain-variable" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>rain</cite> indicator in the improved data set reports if whether any precipitation
+happened at the turnstile location during the day. Because some of the
+precipitation data was missing in the weather tables, the conditions
+reported in the <cite>conds</cite> variable was used to create the <cite>rain</cite> column (as
+mentioned in the forums): if at anytime during a day the condition reported at
+a turnstile location was one of the following the <cite>rain</cite> indicator was set to one:
+&#8216;Rain&#8217;, &#8216;Light Rain&#8217;, &#8216;Heavy Rain&#8217; or &#8216;Light Drizzle&#8217;. This explains why for 94
+entries reporting <cite>rain</cite> equal to 1, the <cite>meanprecipi</cite> variable (mean precipitation
+for the day at the location) was 0. Also, as shown before, this indicator is different
+for each turnstile depending on the closest weather station report. Thus, we
+find out that 216 turnstiles report 7 days of rain, 19 turnstiles report 6 rainy
+days, and 2 report 5 rainy days. Adding this analysis with the one in the previous
+subsection, we have to be aware that the samples might not be completely independent
+as previously thought.</p>
+<p>Also, there is another important problem derived from the use of <cite>rain</cite>
+variable that we hope to make clear with the plot shown on
+<a class="reference internal" href="#figure25"><em>Figure 2.5</em></a>.</p>
+<div class="figure align-center" id="figure25">
+<a class="reference internal image-reference" href="_images/r084.png"><img alt="_images/r084.png" src="_images/r084.png" style="width: 3240.0px; height: 1260.0px;" /></a>
+<p class="caption">Ridership, precipitation and rain indicator for turnstile 084.</p>
+<div class="legend">
+The figure show the ridership evolution in May, in terms of entries per hour,
+for turnstile 084, which is on one of the must busy stations in NYC subway.
+There is one point every four hours for the month of May, and the symbols indicate
+whether the day was rainy (big circles) or not rainy (small triangles). Also,
+the precipitation amount in inches for the rainy days is shown by means of the
+color bar in the right, with darker blue colors indication more precipitation.</div>
+</div>
+<p>The problem we see on using the <cite>rain</cite> variable as and indicator of rainy conditions
+for a turnstile is that a whole day is tagged as rainy even when only rain at one
+time during the day. Furthermore, it can happen, as it can clearly be seen on the figure,
+that the rain happened in one of the less busy hours of the day, but still the whole
+day data will be tagged as rainy: this will clearly affect the results of our
+previous analysis.</p>
+</div>
+<div class="section" id="smoothing-the-data-and-answering-the-question-again">
+<h3>Smoothing the data and answering the question again<a class="headerlink" href="#smoothing-the-data-and-answering-the-question-again" title="Permalink to this headline">¶</a></h3>
+<p>In order to smooth out the previously mentioned effects we created a new data
+set from where two samples will be created later. For this dataset we grouped
+all individual turnstiles data by time stamp, aggregating the ridership
+(<cite>ENTRIESn_hourly</cite>) using the <cite>sum</cite> function. In this way we have a set that
+represent the behavior of the whole NYC subway as one system, instead of
+individual turnstiles, reporting the total ridership at each time stamp. For each
+time stamp a variable called <cite>rain_day</cite> was created, which is 1 if in any
+turnstile during a day within the whole NYC subway network some precipitation
+was reported, or 0 otherwise. Also, the data from May 30th is removed, since it
+changes the statistic for the mondays. We will now redo the analysis using this
+dataset, and in this way try to answer the original question: <em>Does the NYC subway</em>
+<em>ridership changes with the precipitation conditions?</em></p>
+<ul class="simple">
+<li>Sample A is the subgroup of all the data coming from non rainy days (<cite>rain == 0</cite>).</li>
+<li>Sample B is the subgroup of the data in rainy days (<cite>rain == 1</cite>).</li>
+</ul>
+<p>The ridership distribution of both samples are again similar in shape, but they are not
+longer continuous, as show in <a class="reference internal" href="#figure26"><em>Figure 2.6</em></a>. We will use again the median
+to report the average of each sample, and the Mann Whitney U test to assess the significance
+of any difference we might found.</p>
+<div class="figure align-center" id="figure26">
+<a class="reference internal image-reference" href="_images/samples2_compared.png"><img alt="_images/samples2_compared.png" src="_images/samples2_compared.png" style="width: 1350.0px; height: 1080.0px;" /></a>
+<p class="caption">Ridership distribution comparison between rainy and dry days for the new samples
+taken from the aggregated data.</p>
+</div>
+<p>The ridership in non-rainy days has a median of 370535 entries per hour, while for rainy
+days the median is 363124. However the results from the U test are now different:</p>
+<ul class="simple">
+<li>U statistic: 3477.0</li>
+<li>p-value (2-tailed hypothesis): 0.71</li>
+</ul>
+<p>So the difference in the medians are not significant now, and we can&#8217;t conclude that
+there is any meaningful difference in the ridership as a function of the precipitation
+conditions.</p>
+<table class="docutils citation" frame="void" id="os4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[os4]</td><td>Diez, Barr, Cetinkaya-Rundel. Open Intro Statistics. 2nd Edition.
+openintro.org</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Statistical Test</a><ul>
+<li><a class="reference internal" href="#statistical-test-used">Statistical Test Used</a></li>
+<li><a class="reference internal" href="#justify-the-statistical-test">Justify the Statistical Test</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+<li><a class="reference internal" href="#interpretation-and-discussion">Interpretation and discussion</a><ul>
+<li><a class="reference internal" href="#missing-data-and-precipitation-distribution">Missing data and precipitation distribution</a></li>
+<li><a class="reference internal" href="#the-use-of-the-rain-variable">The use of the <cite>rain</cite> variable</a></li>
+<li><a class="reference internal" href="#smoothing-the-data-and-answering-the-question-again">Smoothing the data and answering the question again</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="section2.html"
+                        title="next chapter">Linear Regression</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/section1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="section2.html" title="Linear Regression"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li><a href="index.html">Analyzing the NYC Subway Dataset 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Ignacio Toledo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
