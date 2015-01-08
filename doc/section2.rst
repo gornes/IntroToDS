@@ -193,9 +193,6 @@ using the predictor variables `hour`, `weekday`, `rain` and dummies from `UNIT`
 (:ref:`Eq. 3.1 <multreg_mod>`), and their statistical significances
 (:ref:`Table 3.2 <table32>`).
 
-At :ref:`figure 3.6 <figure36>` we present some residuals analysis plots, in order
-to provide later a more accurate interpretation of these results.
-
 .. _table31:
 .. table:: OLS Regression Results
 
@@ -229,6 +226,21 @@ to provide later a more accurate interpretation of these results.
    **weekday**    ,  980.9091,   23.243,   42.203, 0.000,  935.353  1026.465
    **rain**       ,   36.3145,   25.167,    1.443, 0.149,  -13.013    85.642
 
+
+Interpretation and limits
+=========================
+
+Even when a relatively high :math:`R^2` was achieved by the use of a multiple
+linear regression model, a successful model should also comply with several
+assumptions, which can be checked by analysing the residuals.
+
+1. **Are the residuals for the model nearly normal?**:
+   :ref:`figure 3.6 top rows <figure36>`, shows that the residuals obtained do
+   not seem to follow a normal distribution. Even when the pick of the residuals
+   tend to be zero, the wings do not follow a Gaussian distribution, as is more
+   easily seen on the top left plot. Most probably, we have a big number of
+   outliers.
+
 .. _figure36:
 .. figure:: residuals_an.png
    :scale: 100%
@@ -239,26 +251,111 @@ to provide later a more accurate interpretation of these results.
    *Top left:* normal probability plot of the residuals and *top right:* residuals
    distribution. It is clear that residuals do not adjust well to a simple normal
    probability distribution. *Bottom left* shows the residuals versus the
-   predicted quantities, and *bottom right* just shows the residuals distribution
-   around 0.
+   predicted ridership, and *bottom right* just the residuals following the order
+   on which the observed values were found on the improved dataset.
 
+2. **Is the variability of the residuals nearly constant?**: the variance of the
+   residuals can be checked on the bottom left plot of :ref:`figure 3.6 <figure36>`,
+   where the residuals vs predicted values are plotted. The figure doesn't show
+   a constant variance along the x axis, with a lot of features that might be
+   related to a poorly fit.
 
-Interpretation and limits
-=========================
+3. **Are the residuals independent?**: a plot of the residuals in the order of the
+   data collected in the original data frame should show no relation between
+   close neighbours. Our data frame mix data from several turnstiles, but it is
+   ordered in such way that all data from the turnstiles can be found on sequenced
+   blocks, where the data is again ordered by date and time. From the bottom right
+   plot on :ref:`figure 3.6 <figure36>` it seems that the residuals do not look
+   independent between different turnstiles.
+
+4. **Is each variable linearly related to the outcome?**: we can check the linearity
+   from the figures presented in section 3.2; also the reader can check some
+   other figures withing the ipython notebook associated to this project. It has
+   been already established that there is a linear relation between ridership and
+   the variables `weekday` and `rain`; however there is a poor relation with
+   the `hour` variable (:ref:`figure 3.7 <figure37>`). However, there are some
+   issues raised given the way the `UNIT` variable was included in the model,
+   and that can be seen in the plots shown in :ref:`figure 3.8 <figure37>`
+   and :ref:`figure 3.9 <figure39>`.
 
 .. _figure37:
+.. figure:: hour_residuals.png
+   :scale: 90%
+   :align: center
+
+   Residuals (as boxplots) vs hour of the day.
+
+.. _figure38:
+.. figure:: turns_residuals.png
+   :scale: 90%
+   :align: center
+
+   Residuals (as boxplots) for different turnstiles.
+
+.. _figure39:
 .. figure:: turns_pred.png
    :scale: 90%
    :align: center
 
-   The observed ridership values for two different turnstiles in the month of May,
-   over-plotted with the predicted ridership for both cases.
+   Observed and predicted ridership values for three different turnstiles.
 
-   The turnstiles used were R084 and R172, one at downtown and the other at the
-   periphery. The predicted values come from the linear regression model applied
-   in previous section.
+   The turnstiles used were R084, R172 and R338, one at downtown and the other two
+   at the periphery. The predicted values come from the linear regression model applied
+   in previous section. Note how besides the middle panel, the model predictions do
+   not follow well the observed ridership for stations with too much traffic or low
+   traffic. Also, because of the way the `UNIT` dummy variables are used, we can see
+   that just adding a constant is not enough to scale the ridership for individual
+   locations.
 
-A successful multiple regression model should comply with several assumptions,
-which can be checked by analysing the residuals.
+Besides the mild coefficient of determination it seems that many of the assumptions
+are not met by our data to successfully apply a multiple regression model to it. The
+residuals analysis are very good indicators of the behaviors of the ridership that the
+model can't explain, mainly because it is a very rough assumption to use `hour` as it is
+clearly not well modeled by the linear regression (:ref:`figure 3.7 <figure37>`).
+:ref:`Figure 3.9 <figure39>` is also a nice diagnosis tool to
+show that using the turnstiles names as dummy variables can help to improve the fit to
+the model, but is not enough. From the figure we can see again that the ridership varies
+from location to location, with picks and valley hours happening at different times of
+the day for different turnstiles. Our model only corrects each turnstile by adding or
+subtracting a constant to each turnstile, which is not enough to model the ridership
+of the different locations. We also found that given the negative value of the intercept
+coefficient and small values for some turnstile coefficients we have several ridership
+predictions that are negative: this is meaningless for our problem, since is doesn't make
+sense a negative ridership.
 
-1.
+Finally, it is interesting to independently check that even when the `rain` variable can
+be fit by a linear model, it significance is very low as can be seen by the low p-value
+of the coefficient: 0.15. In fact, removing `rain` as predictor feature only reduce the
+:math:`R^2` by less than 0.0001, and the reported coefficient of determination is
+still 0.481.
+
+Aggregated dataset and polynomial features
+------------------------------------------
+
+We will know take advantage to the extra wrangling done with the improved data set in the
+previous chapter, and we will use the smoothed dataset that we created:
+**nycsubway_weather**. This data set was created by aggregating the ridership for each time
+stamp by adding all the ridership of the individual turnstiles, so we have a dataset
+that reports the ridership of the NYC subway as a whole. The columns of this dataset are
+
+* ENTRIESn_hourly: the total ridership as entries per hour for the whole NYC subway
+  system
+
+* dateTime: `datetime` variable, is the date and time for each observed value.
+
+* hour: integer value, is the hour of the day for each reported value. It has a 24 hour
+  format.
+
+* day_week: integer value, is the day of the week for the observation (0 for Monday, 6 for
+  Sunday)
+
+* weekday: indicator variable, 1 for a weekday, 0 for a weekend day.
+
+* holiday: categorical variable, 1 for days that are holidays.
+
+* rain_hour: indicator variable, it reports whether at any location within the NYC Subway
+  system was raining at the particular time
+
+* rain_day: indicator variable, it reports whether at any location in the NYC Subway system
+  there wa any precipitation (rain) for the particular day of the reported value.
+

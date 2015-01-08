@@ -2,98 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3419ed78-2a8e-4294-a71b-1a4e9c6c6d92" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/comment-bright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/comment-close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/comment.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/dataentries.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/dataentries.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/day_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/day_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/day_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/down-pressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/file.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/hour_residuals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/hour_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/hour_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/hour_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/medprecip_loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/medprecip_loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/medrider_loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/medrider_loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/objects.inv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/polyfit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/r084.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/r084.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/r084_may.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/r084_may.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/r084_may.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/rain_residuals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/rain_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/rain_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/rain_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/residuals_an.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/residuals_an.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/residuals_an.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/samples2_compared.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/samples2_compared.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/samples_compared.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/samples_compared.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/turns_pred.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/turns_pred.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/turns_pred.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/up-pressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/weekday_residuals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/weekday_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_images/weekday_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/weekday_rider.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/.buildinfo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/basic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/doctools.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/genindex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/index.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/overview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/overview.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/pygments.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/searchindex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/searchtools.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/section1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/section1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/section2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/section2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/section3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/section3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/section4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/section4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/section5.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/section5.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/underscore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/html/_static/websupport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/hour_residuals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/turns_residuals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_build/latex/turns_residuals.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.pdf" afterPath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/dataentries.png" afterPath="$PROJECT_DIR$/doc/dataentries.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/doc/_build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/medrider_loc.png" afterPath="$PROJECT_DIR$/doc/medrider_loc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/samples2_compared.png" afterPath="$PROJECT_DIR$/doc/samples2_compared.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/samples_compared.png" afterPath="$PROJECT_DIR$/doc/samples_compared.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/hour_residuals.png" afterPath="$PROJECT_DIR$/doc/hour_residuals.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/overview.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/overview.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/rain_residuals.png" afterPath="$PROJECT_DIR$/doc/rain_residuals.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/section1.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/section1.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/section2.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/section2.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/section3.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/section3.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/section4.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/section4.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/doctrees/section5.doctree" afterPath="$PROJECT_DIR$/doc/_build/doctrees/section5.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/turns_pred.png" afterPath="$PROJECT_DIR$/doc/turns_pred.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/turns_pred.png" afterPath="$PROJECT_DIR$/doc/_build/latex/turns_pred.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.aux" afterPath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.out" afterPath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.tex" afterPath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.toc" afterPath="$PROJECT_DIR$/doc/_build/latex/AnalyzingtheNYCSubwayDataset.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Project1-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Project1-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project1.ipynb" afterPath="$PROJECT_DIR$/Project1.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/overview.rst" afterPath="$PROJECT_DIR$/doc/overview.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/section1.rst" afterPath="$PROJECT_DIR$/doc/section1.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/conf.py" afterPath="$PROJECT_DIR$/doc/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index.rst" afterPath="$PROJECT_DIR$/doc/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectone.py" afterPath="$PROJECT_DIR$/projectone.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/section2.rst" afterPath="$PROJECT_DIR$/doc/section2.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -124,17 +55,17 @@
         <entry file="file://$PROJECT_DIR$/doc/index.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="overview.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="overview.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/overview.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3894737" vertical-offset="0" max-vertical-offset="1692">
-              <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1692">
+              <caret line="26" column="69" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -143,18 +74,18 @@
       <file leaf-file-name="section1.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/section1.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3933" max-vertical-offset="4842">
-              <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3989" max-vertical-offset="4842">
+              <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="section2.rst" pinned="false" current-in-tab="false">
+      <file leaf-file-name="section2.rst" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doc/section2.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3915" max-vertical-offset="4842">
-              <caret line="261" column="48" selection-start-line="261" selection-start-column="48" selection-end-line="261" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.8735363" vertical-offset="5752" max-vertical-offset="6606">
+              <caret line="361" column="0" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,7 +104,7 @@
       <file leaf-file-name="section4.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/section4.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
@@ -183,8 +114,18 @@
       <file leaf-file-name="section5.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/section5.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="324">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
               <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projectone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2656" max-vertical-offset="5094">
+              <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -203,17 +144,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/doc/index.rst" />
         <option value="$PROJECT_DIR$/doc/section3.rst" />
         <option value="$PROJECT_DIR$/doc/section4.rst" />
         <option value="$PROJECT_DIR$/doc/section5.rst" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/projecone.py" />
-        <option value="$PROJECT_DIR$/projectone.py" />
-        <option value="$PROJECT_DIR$/doc/section2.rst" />
         <option value="$PROJECT_DIR$/doc/section1.rst" />
         <option value="$PROJECT_DIR$/doc/overview.rst" />
+        <option value="$PROJECT_DIR$/doc/index.rst" />
+        <option value="$PROJECT_DIR$/doc/conf.py" />
+        <option value="$PROJECT_DIR$/projectone.py" />
+        <option value="$PROJECT_DIR$/doc/section2.rst" />
       </list>
     </option>
   </component>
@@ -221,9 +163,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="27" />
-    <option name="width" value="954" />
-    <option name="height" value="1053" />
+    <option name="width" value="962" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -612,27 +555,33 @@
       <option name="project" value="LOCAL" />
       <updated>1420394190522</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding new files, updating work">
+      <created>1420679840984</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1420679840984</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="954" height="1053" extended-state="4" />
+    <frame x="-1" y="27" width="962" height="1054" extended-state="4" />
     <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12637363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2647059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -666,30 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doc/section2.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section3.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="324">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section4.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/section5.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="324">
@@ -1002,34 +927,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section5.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section4.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/section3.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21628839" vertical-offset="0" max-vertical-offset="5112">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1040,10 +942,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section2.rst">
+    <entry file="file://$PROJECT_DIR$/doc/section1.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3915" max-vertical-offset="4842">
-          <caret line="261" column="48" selection-start-line="261" selection-start-column="48" selection-end-line="261" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3989" max-vertical-offset="4842">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1051,23 +953,67 @@
     <entry file="file://$PROJECT_DIR$/doc/index.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/section1.rst">
+    <entry file="file://$PROJECT_DIR$/doc/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3933" max-vertical-offset="4842">
-          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.30363423" vertical-offset="3287" max-vertical-offset="4842">
+          <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+          <folding>
+            <element signature="e#445#455#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/overview.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3894737" vertical-offset="0" max-vertical-offset="1692">
-          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1692">
+          <caret line="26" column="69" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/hour_residuals.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/turns_residuals.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/section4.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/section5.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projectone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2656" max-vertical-offset="5094">
+          <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/section2.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8735363" vertical-offset="5752" max-vertical-offset="6606">
+          <caret line="361" column="0" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
           <folding />
         </state>
       </provider>

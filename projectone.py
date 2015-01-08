@@ -185,7 +185,8 @@ def compute_r_squared(data, prediction):
     return r_squared
 
 
-def predictions_system(dataframe, features_list=['hour', 'day_week', 'rain_day'], dummies = None):
+def predictions_system(dataframe, features_list=['hour', 'day_week', 'rain_day'],
+                       dummies=None, intercept=True):
     """
     The NYC turnstile data is stored in a pandas dataframe called
     weather_turnstile.
@@ -249,7 +250,8 @@ def predictions_system(dataframe, features_list=['hour', 'day_week', 'rain_day']
     m = len(values)
 
     features, mu, sigma = normalize_features(features)
-    features['ones'] = np.ones(m)  # Add a column of 1s (y intercept)
+    if intercept:
+        features['ones'] = np.ones(m)  # Add a column of 1s (y intercept)
 
     # Convert features and values to numpy arrays
     features_array = np.array(features)
