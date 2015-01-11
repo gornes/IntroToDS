@@ -14,7 +14,7 @@
 
 
 \title{Analyzing the NYC Subway Dataset}
-\date{January 09, 2015}
+\date{January 10, 2015}
 \release{}
 \author{Ignacio Toledo}
 \newcommand{\sphinxlogo}{}
@@ -164,18 +164,19 @@ the use of the precipitation variable improve the fit?
 
 \section{Supporting Material}
 \label{overview:supporting-material}
-Within the project github repository you will also find an ipython notebook,
-where most of the work done was recorded for reference.
+Within the project \href{https://github.com/itoledoc/IntroToDS}{github repository}
+you will also find an ipython notebook, where most of the work done was recorded
+for the readers reference.
 
 
 \section{Some remarks about the datasets used}
 \label{overview:some-remarks-about-the-datasets-used}
 For this project we use the data set provided at Data Analyst Nanodegree's
-portal for Project 1. The description of the variables can be found on...
+portal for Project 1.
 
 However, after the exploratory and data analysis, we created another dataset by
-further munging the improved dataset. The basic idea was to smooth out features that
-might be caused by individual turnstiles or measurements. To do this, I
+further munging the improved dataset. The basic idea was to smooth out features
+that might be caused by individual turnstiles or measurements. To do this, we
 grouped the data by time stamp and aggregated the entries by hour by adding all
 the entries. Also, the precipitation information for each
 time stamp was included by means of two columns:
@@ -240,14 +241,33 @@ in the NYC system by a small amount, we will use a non-parametric test.
 
 \section{Statistical Test Used}
 \label{section1:statistical-test-used}
+\textbf{Which statistical test did you use to analyse the NYC subway data?}
+
 The Mann Whitney U test {\hyperref[overview:wikimann]{{[}wikiMann{]}}} is chosen to assess the statistical
-significance of this result. The null hypothesis in our case is that both
-populations are equal, or that there is no significant deviation on both
-populations medians (two-tailed hypothesis).
+significance of this result.
+
+\textbf{What is the null hypothesis}
+
+The null hypothesis in our case is that both populations are equal, or that
+there is no significant deviation on both
+populations medians
+
+\textbf{Did you use a one or two-tail P value?}
+
+Because of the null hypothesis we will use a two-tail p-value.
+
+\textbf{What is your p-critical value?}
+
+We will use a p-critical equal to 0.05, meaning that in case the null hypothesis
+is false we will require a 95\% of confidence.
 
 
 \section{Justify the Statistical Test}
 \label{section1:justify-the-statistical-test}
+\textbf{Why is this statistical test applicable to dataset? In particular, consider}
+\textbf{the assumptions that the test is making about the distribution of the ridership}
+\textbf{in the two samples.}
+
 The Mann Whitney U test, or Wilcoxon rank-sum test, is chosen because of
 characteristics of our samples: we can't use a parametric test because the
 distributions do not seem to follow any particular and well known probability
@@ -266,8 +286,10 @@ The responses are ordinal (so we can use the ranking algorithm of the U test).
 
 \end{itemize}
 
-Results
-=======p
+
+\section{Results}
+\label{section1:results}
+\textbf{What results did you get from this statistical test?}
 
 We used the scipy implementation of the Mann Whitney U test
 (scipy.stats.mannwhitneyu). The results from the test are:
@@ -288,9 +310,14 @@ hypothesis, so we multiply by 2 to get the significance for our hypothesis:
 
 \end{itemize}
 
+The averages from the two data samples have been already presented in the beginning
+of this chapter.
+
 
 \section{Interpretation and discussion}
 \label{section1:interpretation-and-discussion}
+\textbf{What is the significance and interpretation of these results?}
+
 The interpretation, given the result from the U test, is that the the ridership
 is not the same for rainy days than non-rainy days, with a significance higher
 than 95\% (p \textless{} 0.05). Furthermore, from the descriptive statistics of our samples
@@ -507,6 +534,9 @@ in an effort to deal with the nonlinearity of it.
 
 \section{Linear regression algorithm(s)}
 \label{section2:linear-regression-algorithm-s}
+\textbf{What approach did you use to compute the coefficients theta and produce}
+\textbf{prediction for ENTRIESn\_hourly in your regression model}
+
 
 \subsection{Gradient descent}
 \label{section2:gradient-descent}
@@ -535,11 +565,14 @@ the interpretation section.
 
 \section{Models and features used}
 \label{section2:models-and-features-used}
+\textbf{What features (input variables) did you use in your model? Did you use any}
+\textbf{dummy variables as part of your features?}
+
 The selection of the features to use and how to use them in the model was not
-a linear process, but an iterative work based on exploratory statistics, residuals
-analysis and study of the models obtained to predict the ridership. In fact,
-for the problem set 3 in the class we used a different set of variables as
-predictors (specifically \code{day\_week} instead of \code{weekday}).
+a linear process, but an iterative work based on exploratory statistics,
+residuals analysis and study of the models obtained to predict the ridership.
+In fact, for the problem set 3 in the class we used a different set of variables
+as predictors (specifically \code{day\_week} instead of \code{weekday}).
 
 Also, it was because of these iterative analysis that we decided to give a try
 to a third method to model the data which included the use of polynomial
@@ -589,8 +622,8 @@ huge spread of possible ridership values for each hour.
 }\label{section2:figure31}\end{figure}
 \begin{itemize}
 \item {} 
-\code{weekday}: numerical (and categorical) variable indicating if the day when the
-ridership measurement was done was either a weekday (1) or weekend day (0).
+\code{weekday}: numerical (and categorical) variable indicating if the day when
+the ridership measurement was done was either a weekday (1) or weekend day (0).
 {\hyperref[section2:figure32]{\emph{Figure 3.2}}} shows the relation of the ridership with kind of
 day.
 
@@ -625,6 +658,8 @@ With the use of boxplots again, we can see in this figure that a really mild
 linear correlation exist between daily precipitation conditions and
 ridership. (Which as was shown in the previous section is not significant).
 }\label{section2:figure33}\end{figure}
+
+\textbf{Why did you select these features in your model?}
 
 The features were selected based partially on intuition and partially by
 exploratory analysis. First, it was clear that the behavior for each individual
@@ -686,14 +721,19 @@ or predictable variable on itself.
 
 \section{Results: coefficients and R Squared}
 \label{section2:results-coefficients-and-r-squared}
+\textbf{What are the coefficients (or weights) of the non-dummy features in your}
+\textbf{linear regression model?}
+
+\textbf{What is your model’s} \(R^2\) \textbf{(coefficients of determination) value?}
+
 The coefficients found with the gradient descent and OLS algorithms were the
 same in both cases, which was expected for a successful execution of the
 gradient descent algorithm. The selected features were enough to obtain a
 \(R^2 = 0.481\). More in depth details of the result can be seen in
 {\hyperref[section2:table31]{\emph{Table 3.1}}}. Also, thanks to the statsmodels OLS implementation
 we can report some of the coefficients obtained from the linear model fit,
-using the predictor variables \code{hour}, \code{weekday}, \code{rain} and dummies from \code{UNIT}
-({\hyperref[section2:multreg-mod]{\emph{Eq. 3.1}}}), and their statistical significances
+using the predictor variables \code{hour}, \code{weekday}, \code{rain} and dummies from
+\code{UNIT} ({\hyperref[section2:multreg-mod]{\emph{Eq. 3.1}}}), and their statistical significances
 ({\hyperref[section2:table32]{\emph{Table 3.2}}}).
 \phantomsection\label{section2:table31}
 
@@ -895,6 +935,10 @@ C(UNIT){[}T.R007{]}
 
 \section{Interpretation and limits}
 \label{section2:interpretation-and-limits}
+\textbf{What does this} \(R^2\) \textbf{value mean for the goodness of fit for your regression}
+\textbf{model? Do you think this linear model to predict ridership is appropriate for}
+\textbf{this dataset, given this} \(R^2\) \textbf{value?}
+
 Even when a relatively high \(R^2\) was achieved by the use of a multiple
 linear regression model, a successful model should also comply with several
 assumptions, which can be checked by analysing the residuals {\hyperref[overview:diez2012]{{[}Diez2012{]}}}.
@@ -1104,22 +1148,22 @@ residual analysis plots in {\hyperref[section2:figure311]{\emph{Figure 3.11}}}.
 \caption{Residuals analysis plots for the polynomial model (nycsubway\_weather dataset).}{\small 
 \emph{Top left:} normal probability plot of the residuals and \emph{top right:} residuals
 distribution. The residuals are distributed now following more closely the shape
-of a Gaussian, and less outliers are visibles; \emph{Bottom left} shows the residuals
+of a Gaussian, and less outliers are visible; \emph{Bottom left} shows the residuals
 versus the predicted ridership, and \emph{bottom right} just the residuals following
 the order on which the observed values are reported.
 }\label{section2:figure311}\end{figure}
 
 Even when (a) the residual distribution is now closer to a normal distribution,
-(b) the variance seems to be more constant and (c) the residuals seem independent, we
-must draw the attention to the reader to the fact that this model, while an improvement,
-still have shortcomings, that can be seen in {\hyperref[section2:figure312]{\emph{Figure 3.12}}}. While
-the hourly and daily ridership are now modeled with higher precision we have to
-be aware of the overfitting our model is suffering of, explained by the large
-number of coefficients to be found (126 coefficients). However, it is clear
-that a much better work can be done with more complex machine learning algorithms,
-and the idea was just to show that with the data we have we should be able to
-predict ridership with much more accuracy than the linear regression is capable
-of.
+(b) the variance seems to be more constant and (c) the residuals seem
+independent, we must draw the attention to the reader to the fact that this
+model, while an improvement, still have shortcomings, that can be seen in
+{\hyperref[section2:figure312]{\emph{Figure 3.12}}}. While the hourly and daily ridership are now
+modeled with higher precision we have to be aware of the overfitting our model
+is suffering of, explained by the large number of coefficients to be found
+(126 coefficients). However, it is clear that a much better work can be done
+with more complex machine learning algorithms, and the idea was just to show
+that with the data we have we should be able to predict ridership with much more
+accuracy than the linear regression is capable of.
 \begin{figure}[htbp]
 \centering
 \capstart
@@ -1134,21 +1178,147 @@ hour.}\label{section2:figure312}\end{figure}
 
 \section{Ridership distribution with weather}
 \label{section3:ridership-distribution-with-weather}
+\textbf{One visualization should contain two histograms: one of  ENTRIESn\_hourly for}
+\textbf{rainy days and one of ENTRIESn\_hourly for non-rainy days.}
+
+The figure comparing the ridership distributions for rainy and non-rainy days
+has been already presented in the Chapter 2. Here ({\hyperref[section3:figure42]{\emph{figure 4.1}}})
+we show the same figure, but this time we want to show the different samples sizes
+by not normalizing the data.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{samples_compared_nonnor.png}}
+\caption{Ridership distribution comparison between rainy and dry days.}{\small 
+Please note the logarithmic scale on axis Y. It was used to allows us to
+study the visualization with more detail. Both distributions are similar in
+shape, but the rainy sample is smaller than the rain sample (there was
+precipitation reported for only 7 days of May 2011), and thus the counts
+by bin are smaller.
+}\label{section3:figure41}\end{figure}
+
 
 \section{Supporting visualizations}
 \label{section3:supporting-visualizations}
+\textbf{One visualization can be more freeform.}
+
+We will shown here some of the other plots that were created while working on
+this project, and that help to answer particulars questions we have, or to
+explore the data. All the code that produced these plots can be found on the
+accompanying IPython notebook.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz1.png}}
+\caption{Ridership distribution for one turnstile.}{\small 
+With this figure we studied how the ridership distribution looked for the
+data of one turnstile. It looks like there are multiple distributions within
+the data (multiples modes), which correspond to the different distributions
+for a particular hour and day of the week.
+}\label{section3:figure42}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz2.png}}
+\caption{Ridership behavior for two different turnstiles}{\small 
+This plot was created to show the different daily behavior by turnstile
+location, comparing one turnstile at downtown and other at the periphery. The
+y-axis scale was normalized to focus on how different was the use of the
+turnstiles along the day: the downtown locations tend to have a peak
+at 20 hours, while the suburbs peak at noon.
+}\label{section3:figure43}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz3a.png}}
+\caption{Weekly ridership behavior for turnstiles with no missing data.}{\small 
+This figure, and the next, were created while studying the actual
+independence of the rainy and non-rainy samples in chapter 2. We noticed
+that several turnstiles within the original dataset didn't report information
+for 1 or several times in May 2011, and we wanted to study what would happen
+if we only worked with the complete turnstiles. We found out that the
+locations with no missing data were mostly at downtown stations, and they
+also represented mostly the busiest locations. Note that daily ridership
+peaks at 20 hours. \emph{Notice that the x-axis includes markers for the 0 hours}
+\emph{of each day of the week, and six reports happen each day, for 0, 4, 8, 12,}
+\emph{16 and 20 hours.}
+}\label{section3:figure44}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz3b.png}}
+\caption{Weekly ridership behavior for turnstiles with missing data.}{\small 
+Same as previous figure, but for data with missing data. Note how the daily
+ridership behaviors changes, with two peaks, one at noon and the other at 20
+hours. If a comparison is done with {\hyperref[section3:figure43]{\emph{Figure 4.3}}}, this sample
+is more similar to the suburb station, while the previous sample is closer
+to the behavior of the downtown locations.
+}\label{section3:figure44b}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz4.png}}
+\caption{Comparison of the daily ridership for non-rainy (0) and rainy (1) samples from
+the improved dataset.}{\small 
+This plots helps to compares how the ridership volume might be affected by the
+precipitation conditions for each day of the week. Both samples seem too have
+a pretty similar ridership volume for the same days, within the limits shown
+by the 95\% confidence intervals (the black vertical lines in each bar)
+}\label{section3:figure45}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz5.png}}
+\caption{Comparison of the daily ridership for non-rainy (0) and rainy (1) samples but
+now from the \code{nycsubway\_weather} dataset.}{\small 
+Same as previous figure. The daily ridership volume for both samples look even
+more similar than in the previous plot. One drawback of this new dataset, that
+treats the NYC subway system as a whole, is that we can notice that we do not
+have too many data points to accurately study the ridership, as can be
+seen by the big 95\% confidence interval lines. With most days having 4 (and
+some 5) observed values within May 2011, when dividing between rainy and
+non-rainy the number of observations drops even more.
+}\label{section3:figure46}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\scalebox{0.800000}{\includegraphics{viz6.png}}
+\caption{Comparison of the week-hourly ridership volumes for the non-rainy and rainy
+samples from the \code{nycsubway\_weather} dataset.}{\small 
+This figure is similar to the previous two plots, but this time we use the
+\code{rain\_hour} indicator to create the two samples. It is clearer now that we
+might have not enough observations to answer the question behind this project,
+does the ridership in the NYC subway changes with the rain conditions? \emph{Note}
+\emph{that the x-axis, for each sample, shows values between 0 and 143, being 0}
+\emph{the 0 hours of Monday, and 143 the 23 hours of Sunday}.
+}\label{section3:figure47}\end{figure}
+
 
 \chapter{Conclusions and Reflections}
 \label{section4::doc}\label{section4:conclusions-and-reflections}
 
-\section{Conclusions}
-\label{section4:conclusions}
+\section{Conclusion}
+\label{section4:conclusion}
+\textbf{From your analysis and interpretation of the data, do more people ride the}
+\textbf{NYC subway when it is raining versus when it is not raining?  What analyses}
+\textbf{lead you to this conclusion?}
 
-\section{Shortcomings and limitations}
-\label{section4:shortcomings-and-limitations}
 
-\section{Insights}
-\label{section4:insights}
+\section{Shortcomings, limitations and insights}
+\label{section4:shortcomings-limitations-and-insights}
+\textbf{Please discuss potential shortcomings of the methods of your analysis}
+
+\textbf{Do you have any other insight about the dataset that you would like to share}
+\textbf{with us?}
+
 \begin{thebibliography}{McKinney2013}
 \bibitem[Diez2014]{Diez2014}{\phantomsection\label{overview:diez2014} 
 Diez, Barr, Cetinkaya-Rundel. Introductory Statistics with

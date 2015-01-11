@@ -39,18 +39,19 @@ the use of the precipitation variable improve the fit?
 Supporting Material
 ===================
 
-Within the project github repository you will also find an ipython notebook,
-where most of the work done was recorded for reference.
+Within the project `github repository <https://github.com/itoledoc/IntroToDS>`_
+you will also find an ipython notebook, where most of the work done was recorded
+for the readers reference.
 
 Some remarks about the datasets used
 ====================================
 
 For this project we use the data set provided at Data Analyst Nanodegree's
-portal for Project 1. The description of the variables can be found on...
+portal for Project 1.
 
 However, after the exploratory and data analysis, we created another dataset by
-further munging the improved dataset. The basic idea was to smooth out features that
-might be caused by individual turnstiles or measurements. To do this, I
+further munging the improved dataset. The basic idea was to smooth out features
+that might be caused by individual turnstiles or measurements. To do this, we
 grouped the data by time stamp and aggregated the entries by hour by adding all
 the entries. Also, the precipitation information for each
 time stamp was included by means of two columns:

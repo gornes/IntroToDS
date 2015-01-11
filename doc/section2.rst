@@ -24,6 +24,9 @@ in an effort to deal with the nonlinearity of it.
 Linear regression algorithm(s)
 ==============================
 
+**What approach did you use to compute the coefficients theta and produce**
+**prediction for ENTRIESn_hourly in your regression model**
+
 Gradient descent
 ----------------
 
@@ -53,6 +56,9 @@ the interpretation section.
 
 Models and features used
 ========================
+
+**What features (input variables) did you use in your model? Did you use any**
+**dummy variables as part of your features?**
 
 The selection of the features to use and how to use them in the model was not
 a linear process, but an iterative work based on exploratory statistics,
@@ -140,6 +146,7 @@ For our work we decided to use the following predictors:
    linear correlation exist between daily precipitation conditions and
    ridership. (Which as was shown in the previous section is not significant).
 
+**Why did you select these features in your model?**
 
 The features were selected based partially on intuition and partially by
 exploratory analysis. First, it was clear that the behavior for each individual
@@ -204,14 +211,19 @@ or predictable variable on itself.
 Results: coefficients and R Squared
 ===================================
 
+**What are the coefficients (or weights) of the non-dummy features in your**
+**linear regression model?**
+
+**What is your model’s** :math:`R^2` **(coefficients of determination) value?**
+
 The coefficients found with the gradient descent and OLS algorithms were the
 same in both cases, which was expected for a successful execution of the
 gradient descent algorithm. The selected features were enough to obtain a
 :math:`R^2 = 0.481`. More in depth details of the result can be seen in
 :ref:`Table 3.1 <table31>`. Also, thanks to the statsmodels OLS implementation
 we can report some of the coefficients obtained from the linear model fit,
-using the predictor variables ``hour``, ``weekday``, ``rain`` and dummies from ``UNIT``
-(:ref:`Eq. 3.1 <multreg_mod>`), and their statistical significances
+using the predictor variables ``hour``, ``weekday``, ``rain`` and dummies from
+``UNIT`` (:ref:`Eq. 3.1 <multreg_mod>`), and their statistical significances
 (:ref:`Table 3.2 <table32>`).
 
 .. _table31:
@@ -250,6 +262,10 @@ using the predictor variables ``hour``, ``weekday``, ``rain`` and dummies from `
 
 Interpretation and limits
 =========================
+
+**What does this** :math:`R^2` **value mean for the goodness of fit for your regression**
+**model? Do you think this linear model to predict ridership is appropriate for**
+**this dataset, given this** :math:`R^2` **value?**
 
 Even when a relatively high :math:`R^2` was achieved by the use of a multiple
 linear regression model, a successful model should also comply with several
@@ -450,7 +466,7 @@ residual analysis plots in :ref:`Figure 3.11 <figure311>`.
 
    *Top left:* normal probability plot of the residuals and *top right:* residuals
    distribution. The residuals are distributed now following more closely the shape
-   of a Gaussian, and less outliers are visibles; *Bottom left* shows the residuals
+   of a Gaussian, and less outliers are visible; *Bottom left* shows the residuals
    versus the predicted ridership, and *bottom right* just the residuals following
    the order on which the observed values are reported.
 

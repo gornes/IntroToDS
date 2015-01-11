@@ -39,13 +39,32 @@ in the NYC system by a small amount, we will use a non-parametric test.
 Statistical Test Used
 =====================
 
+**Which statistical test did you use to analyse the NYC subway data?**
+
 The Mann Whitney U test [wikiMann]_ is chosen to assess the statistical
-significance of this result. The null hypothesis in our case is that both
-populations are equal, or that there is no significant deviation on both
-populations medians (two-tailed hypothesis).
+significance of this result.
+
+**What is the null hypothesis**
+
+The null hypothesis in our case is that both populations are equal, or that
+there is no significant deviation on both
+populations medians
+
+**Did you use a one or two-tail P value?**
+
+Because of the null hypothesis we will use a two-tail p-value.
+
+**What is your p-critical value?**
+
+We will use a p-critical equal to 0.05, meaning that in case the null hypothesis
+is false we will require a 95% of confidence.
 
 Justify the Statistical Test
 ============================
+
+**Why is this statistical test applicable to dataset? In particular, consider**
+**the assumptions that the test is making about the distribution of the ridership**
+**in the two samples.**
 
 The Mann Whitney U test, or Wilcoxon rank-sum test, is chosen because of
 characteristics of our samples: we can't use a parametric test because the
@@ -63,6 +82,8 @@ assumptions that our data samples must comply with are basically:
 Results
 =======
 
+**What results did you get from this statistical test?**
+
 We used the scipy implementation of the Mann Whitney U test
 (scipy.stats.mannwhitneyu). The results from the test are:
 
@@ -74,9 +95,14 @@ hypothesis, so we multiply by 2 to get the significance for our hypothesis:
 
 * :math:`p = 3.82 \cdot 10^{-6}`
 
+The averages from the two data samples have been already presented in the beginning
+of this chapter.
+
 
 Interpretation and discussion
 =============================
+
+**What is the significance and interpretation of these results?**
 
 The interpretation, given the result from the U test, is that the the ridership
 is not the same for rainy days than non-rainy days, with a significance higher
@@ -263,5 +289,3 @@ test are now different:
 So the difference in the medians are not significant now, and we can't conclude
 that there is any meaningful difference in the ridership that could be explained
 by the precipitation conditions.
-
-
