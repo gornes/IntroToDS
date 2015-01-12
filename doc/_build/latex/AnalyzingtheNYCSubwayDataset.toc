@@ -24,5 +24,5 @@
 \contentsline {section}{\numberline {4.2}Supporting visualizations}{26}{section.4.2}
 \contentsline {chapter}{\numberline {5}Conclusions and Reflections}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Conclusion}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Shortcomings, limitations and insights}{31}{section.5.2}
+\contentsline {section}{\numberline {5.2}Shortcomings, limitations and insights}{32}{section.5.2}
 \contentsline {chapter}{Bibliography}{33}{chapter*.8}
